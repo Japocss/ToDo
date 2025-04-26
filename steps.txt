@@ -1,0 +1,16 @@
+Configuração GIT
+git config --global user.email "inadux15@gmail.com"
+git config --global usar.name "Japocss"
+
+Criar um projeto Angular:
+ng new todo
+
+Executar o projeto:
+cd todo
+ng serve -o
+
+Criar um componente:
+ng generate component todo-list
+
+Adicionar o Bootstrap (Node Modules) - npmjs.com
+npm i bootstrap
