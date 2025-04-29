@@ -7,11 +7,10 @@
             <input type="text" class="form-control" id="task"
                 ngModel name="task" #taskInput="ngModel" required
                 placeholder="Digite a tarefa a ser realizada">
-
-            <small *ngIf="taskInput.invalid && taskInput.dirty" class="text-danger">Campo Obrigatório</small>
+            <small class="text-danger">Campo Obrigatório</small>
         </div>
 
-        <button [disabled]="taskForm.invalid" type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary">
             Adicionar Tarefa
         </button>
     </form>
@@ -30,11 +29,9 @@
         <tbody>
             <tr *ngFor="let task of taskArray; index as i">
                 <th scope="row">{{i+1}}</th>
-                <td class="w-75">
-                    <span [class.completed]="task.isCompleted">{{task.taskName}}</span>
-                </td>
-                <td><input type="checkbox" (change)="onCheck(i)" [checked]="task.isCompleted"> Finalizada</td>
-                <td><button class="btn btn-sm btn-danger" (click)="onDelete(i)">Excluir</button></td>
+                <td class="w-75">{{task.taskName}}</td>
+                <td><input type="checkbox"> Finalizada</td>
+                <td><button class="btn btn-sm btn-danger">Excluir</button></td>
             </tr>
         </tbody>
     </table>
